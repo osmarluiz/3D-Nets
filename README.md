@@ -1,9 +1,5 @@
 # 3D-Nets
 
-Here is a document you can use on GitHub to explain the organization of the project to your team:
-
----
-
 # Project Structure
 
 This document explains the organization of the code for the project. The goal is to maintain a modular and scalable architecture that makes it easy to add new models, datasets, and utilities.
@@ -163,7 +159,3 @@ To add a new dataset, follow these steps:
 - Follow the existing code style and organization.
 - Write docstrings for all functions and classes.
 - Test your code before pushing changes.
-
----
-
-This document should help the team understand the project structure and how to navigate and extend the codebase.
