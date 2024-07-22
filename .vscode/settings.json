@@ -1,0 +1,8 @@
+{
+    "python.analysis.typeCheckingMode": "basic",
+    "autopep8.args": [
+        "--ignore",
+        "E731, E402"
+    ],
+    "editor.formatOnSave": true,
+}
