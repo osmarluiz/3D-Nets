@@ -13,6 +13,8 @@ val:
 test:
   image_dir: "path/to/test/images" # Path to test images
   mask_dir: "path/to/test/masks" # Path to test masks
+  batch_size: 16 # Batch size for evaluating
+  num_workers: 4 # Number of workers for data loading
 
 model:
   encoder_type: "resnet" # Type of encoder to use (options: 'resnet', 'conv_relu', 'conv_bn_leakyrelu')
