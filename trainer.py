@@ -9,7 +9,7 @@ from torch.optim.lr_scheduler import ReduceLROnPlateau
 class Trainer:
     def __init__(self, model: nn.Module, train_loader: DataLoader, val_loader: DataLoader,
                  criterion: nn.Module, optimizer: Optimizer, scheduler: ReduceLROnPlateau,
-                 num_epochs: int, batch_size: int):
+                 num_epochs: int, batch_size: int, best_model_path: str):
         self.model = model
         self.train_loader = train_loader
         self.val_loader = val_loader
@@ -20,7 +20,7 @@ class Trainer:
         self.batch_size = batch_size
         self.scaler = torch.cuda.amp.GradScaler()
         self.best_val_loss = float('inf')
-        self.best_model_path = 'best_model.pth'
+        self.best_model_path = best_model_path
 
     def calculate_iou(self, pred: torch.Tensor, target: torch.Tensor,
                       threshold: float = 0.5) -> float:

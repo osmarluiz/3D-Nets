@@ -30,6 +30,8 @@ def main(config_path):
     lr = config['train']['learning_rate']
     num_epochs = config['train']['num_epochs']
 
+    best_model_path = config['paths']['best_model_path']
+
     train_dataset = CenterPivotDataset(
         image_dir=train_image_dir, label_dir=train_label_dir)
     val_dataset = CenterPivotDataset(
@@ -50,7 +52,7 @@ def main(config_path):
         optimizer, 'min', patience=5, factor=0.5)
 
     trainer = Trainer(model, train_loader, val_loader, criterion, optimizer,
-                      scheduler, num_epochs, batch_size)
+                      scheduler, num_epochs, batch_size, best_model_path)
 
     trainer.train()
 
