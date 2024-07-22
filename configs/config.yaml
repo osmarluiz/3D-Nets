@@ -1,0 +1,23 @@
+train:
+  image_dir: "path/to/train/images" # Path to training images
+  mask_dir: "path/to/train/masks" # Path to training masks
+  batch_size: 4 # Batch size for training
+  num_workers: 4 # Number of workers for data loading
+  num_epochs: 20 # Number of training epochs
+  learning_rate: 1e-4 # Initial learning rate
+
+val:
+  image_dir: "path/to/val/images" # Path to validation images
+  mask_dir: "path/to/val/masks" # Path to validation masks
+
+test:
+  image_dir: "path/to/test/images" # Path to test images
+  mask_dir: "path/to/test/masks" # Path to test masks
+
+model:
+  encoder_type: "resnet" # Type of encoder to use (options: 'resnet', 'conv_relu', 'conv_bn_leakyrelu')
+  in_channels: 11 # Number of input channels
+  out_channels: 1 # Number of output channels
+
+paths:
+  best_model_path: "path/to/best_model.pth" # Path to save the best model
