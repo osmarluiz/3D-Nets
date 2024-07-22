@@ -122,7 +122,7 @@ train:
   num_workers: 4
   num_epochs: 20
   learning_rate: 1e-4
-  use_residual: true
+  encoder_type: 'resnet'
 
 val:
   image_dir: 'path/to/val/images'
