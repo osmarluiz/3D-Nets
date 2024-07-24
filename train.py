@@ -19,16 +19,16 @@ def main(config_path):
     train_label_dir = config['train']['mask_dir']
     val_image_dir = config['val']['image_dir']
     val_label_dir = config['val']['mask_dir']
-    batch_size = config['train']['batch_size']
-    num_workers = config['train']['num_workers']
+    batch_size = int(config['train']['batch_size'])
+    num_workers = int(config['train']['num_workers'])
 
-    in_channels = config['model']['in_channels']
-    out_channels = config['model']['out_channels']
+    in_channels = int(config['model']['in_channels'])
+    out_channels = int(config['model']['out_channels'])
     encoder_type = config['model']['encoder_type']
-    inner_dims = config['model']['inner_dims']
+    inner_dims = tuple(config['model']['inner_dims'])
 
-    lr = config['train']['learning_rate']
-    num_epochs = config['train']['num_epochs']
+    lr = float(config['train']['learning_rate'])
+    num_epochs = int(config['train']['num_epochs'])
 
     best_model_path = config['paths']['best_model_path']
 
