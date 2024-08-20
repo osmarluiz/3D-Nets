@@ -17,7 +17,7 @@ test:
   num_workers: 4 # Number of workers for data loading
 
 model:
-  encoder_type: "resnet" # Type of encoder to use (options: 'resnet', 'conv_relu', 'conv_bn_leakyrelu')
+  encoder_type: "resnet" # Type of encoder to use (options: 'resnet', 'conv_relu', 'conv_bn_leakyrelu', 'cnn-lstm')
   in_channels: 11 # Number of input channels
   out_channels: 1 # Number of output channels
   inner_dims: [32, 64, 128, 256] # List of inner dimensions for the UNet model

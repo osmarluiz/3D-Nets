@@ -4,6 +4,7 @@ from models.base.base_model import BaseUNet
 from models.encoders.resnet import ResNetEncoder3D
 from models.encoders.conv_relu import ConvReLUEncoder3D
 from models.encoders.conv_bn_leakyrelu import ConvBNLeakyReLUEncoder3D
+from models.encoders.cnn_lstm import CNNLSTMEncoder3D
 
 
 class UNet3D(BaseUNet):
@@ -28,6 +29,8 @@ class UNet3D(BaseUNet):
             return ConvReLUEncoder3D(in_channels, out_channels)
         elif self.encoder_type == 'conv_bn_leakyrelu':
             return ConvBNLeakyReLUEncoder3D(in_channels, out_channels, self.dropout)
+        elif self.encoder_type == 'cnn_lstm':
+            return CNNLSTMEncoder3D(in_channels, out_channels)
         else:
             raise NotImplementedError(
                 f"Encoder type {self.encoder_type} not implemented")
